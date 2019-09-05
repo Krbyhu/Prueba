@@ -1,0 +1,33 @@
+<% include ../partials/_header %>
+    <% include ../partials/_message %>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Registrarse</h5>
+                            <form class="form-signin" action="/signup" method="POST">
+                                <div class="form-label-group">
+                                    <input type="text" name="Nombre_Completo" id="inputName" class="form-control" placeholder="Nombre completo" required autofocus>
+                                    <label for="inputName">Nombre completo<i class="fas fa-user-circle icon"></i></label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input type="text" name="Nombre_Usuario" id="inputNameUser" class="form-control" placeholder="Nombre de usuario" required autofocus>
+                                    <label for="inputNameUser">Nombre de usuario<i class="fas fa-user-circle icon"></i></label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input type="email" name="Correo" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                                    <label for="inputEmail">Correo<i class="far fa-envelope icon"></i></label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input type="password" name="Password" id="inputPassword" class="form-control" placeholder="Password" required autofocus>
+                                    <label for="inputPassword">Contraseña<i class="fas fa-key icon"></i></label>
+                                </div>
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Crear cuenta</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% include ../partials/_footer %>

@@ -1,0 +1,41 @@
+<% include ../partials/_header %>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Agregar Productos</h5>
+                        <form class="form-signin" action="/add" method="POST">
+                            <div class="form-label-group">
+                                <input type="text" name="Nombre" id="inputName" class="form-control" placeholder="Nombre" required autofocus>
+                                <label for="inputName">Nombre del Producto<i class="fas fa-shopping-cart icon"></i></label>
+                            </div>
+                            <div class="form-label-group">
+                                <input type="number" name="Codigo" id="inputCode" class="form-control" placeholder="Codigo" required autofocus>
+                                <label for="inputCode">Codigo<i class="fas fa-barcode icon"></i></label>
+                            </div>
+                            <div class="form-label-group">
+                                <input type="number" name="Valor" id="inputValue" class="form-control" placeholder="Valor" required autofocus>
+                                <label for="inputValue">Valor<i class="fas fa-dollar-sign icon"></i></label>
+                            </div>
+                            <div class="form-label-group">
+                                <input type="number" name="Cantidad" min="1" id="inputQuantity" class="form-control" placeholder="Cantidad" required autofocus>
+                                <label for="inputQuantity">Cantidad<i class="fas fa-list-ol icon"></i></label>
+                            </div>
+                            <div class="form-label-group">
+                                <input type="url" name="UrlImagen" id="inputUrl" class="form-control" placeholder="Url Imagen" required autofocus>
+                                <label for="inputUrl">Url Imagen<i class="fas fa-image icon"></i></label>
+                            </div>
+                            <div class="form-label-group">
+                                <textarea name="Detalle" row="2" id="inputDetail" class="form-control textarea" placeholder="Detalle" required autofocus></textarea>
+                                <label for="inputDetail">Detalle<i class="fas fa-align-justify icon"></i></label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Crear producto</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% include ../partials/_footer %>

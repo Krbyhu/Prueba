@@ -1,0 +1,87 @@
+<% include ../partials/_header %>
+    <% include ../partials/_message %>
+        <div class="container p-2">
+            <div class="row ">
+                <% if(products){ %>
+                    <% for (var i=0; i < products.length; i++){ %>
+                        <% if(!user) { %>
+                            <div class="col-md-3 d-flex align-items-stretch p-2">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-center">
+                                            <%= products[i].Nombre  %>
+                                        </h3>
+                                        <img src="<%= products[i].UrlImagen%>" width="150" height="190">
+                                        <p class="m-2">
+                                            <%= products[i].Detalle  %>
+                                        </p>
+                                        <p class="m-2">
+                                            $
+                                            <%= products[i].Valor  %>
+                                        </p>
+                                        <p class="m-2">
+                                            <%= products[i].cantidad  %> Unid.
+                                        </p>
+                                        <a class="btn btn-lg btn-primary btn-block text-uppercase" id="btn-add" href="/add-to-cart/<%= products[i].ID %>">
+                                Añadir al carro
+                                </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <%} %>
+                                <% if(user) { %>
+                                    <% if(user.isAdmin !== 1) { %>
+                                        <div class="col-md-3">
+                                            <div class="card text-center d-flex align-items-stretch p-2">
+                                                <div class="card-body " id="product-body">
+                                                    <h3 class="card-title text-center">
+                                                        <%= products[i].Nombre  %>
+                                                    </h3>
+                                                    <img src="<%= products[i].UrlImagen  %>" width="150" height="200">
+                                                    <p class="m-2">
+                                                        <%= products[i].Detalle  %>
+                                                    </p>
+                                                    <p class="m-2">
+                                                        $
+                                                        <%= products[i].Valor  %>
+                                                    </p>
+                                                    <p class="m-2">
+                                                        <%= products[i].cantidad  %> Unid.
+                                                    </p>
+                                                    <a class="btn btn-lg btn-primary btn-block text-uppercase" id="btn-add" href="/add-to-cart/<%= products[i].ID %>">
+                                            Añadir al carro
+                                            </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <%} %>
+                                            <% if(user.isAdmin == 1) { %>
+                                                <div class="col-md-3 d-flex align-items-stretch p-2">
+                                                    <div class="card text-center">
+                                                        <div class="card-body">
+                                                            <h3 class="card-title text-center ">
+                                                                <%= products[i].Nombre  %>
+                                                            </h3>
+                                                            <img src="<%= products[i].UrlImagen  %>" width="150" height="200">
+                                                            <p class="m-2">
+                                                                <%= products[i].Detalle  %>
+                                                            </p>
+                                                            <p class="m-2">
+                                                                $
+                                                                <%= products[i].Valor  %>
+                                                            </p>
+                                                            <p class="m-2">
+                                                                <%= products[i].cantidad  %> Unid.
+                                                            </p>
+                                                            <a class="btn btn-danger mt-auto" href="/delete/<%= products[i].ID %>">Borrar</a>
+                                                            <a class="btn btn-secondary mt-auto" href="/edit/<%= products[i].ID %>">Editar</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%} %>
+                                                    <%} %>
+                                                        <%} %>
+                                                            <%} %>
+            </div>
+        </div>
+        <% include ../partials/_footer %>
